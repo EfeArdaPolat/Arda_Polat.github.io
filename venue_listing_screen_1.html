@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SahaBul - Sahaları Keşfet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Ortak stil dosyası -->
+    <link rel="stylesheet" href="../common.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4CAF50",
+                        "secondary": "#212121",
+                        "accent": "#FFC107",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-secondary dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="bg-background-light dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-20">
+<div class="px-4 md:px-10 lg:px-20 mx-auto">
+<div class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-secondary dark:text-white">
+<span class="material-symbols-outlined text-primary text-3xl">sports_soccer</span>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">SahaBul</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors text-primary" href="#">Saha Ara</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Rezervasyonlarım</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Profilim</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-secondary dark:text-white">dark_mode</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Giriş Yap</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<div class="flex flex-col md:flex-row h-[calc(100vh-69px)]">
+<div class="w-full md:w-[450px] bg-white dark:bg-gray-900 p-6 flex flex-col gap-6 overflow-y-auto">
+<div>
+<h1 class="text-2xl font-bold text-secondary dark:text-white">Yakınındaki Sahaları Bul</h1>
+<p class="text-gray-500 dark:text-gray-400 mt-1">İstanbul'da 23 saha bulundu</p>
+</div>
+<div class="relative">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-secondary dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 h-12 placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 text-sm font-normal pl-10" id="city-search" placeholder="Şehir veya ilçe ara..." type="text" value="İstanbul"/>
+<div class="absolute left-3 top-1/2 -translate-y-1/2 mt-px">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">search</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 flex items-center justify-center gap-2 h-10 px-4 rounded-lg bg-gray-100 dark:bg-gray-800 text-sm font-medium text-secondary dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-lg">tune</span>
+<span>Filtreler</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 h-10 px-4 rounded-lg bg-gray-100 dark:bg-gray-800 text-sm font-medium text-secondary dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-lg">sort</span>
+<span>Sırala</span>
+</button>
+</div>
+<div class="flex flex-col gap-4">
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-primary dark:hover:border-primary transition-colors duration-300">
+<img alt="Şehir Futbol Parkı'nın kapalı sahası" class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_cDnalBhFS7fvLrMjBxtUyXM8fOWDNvZujJRuoboSDQGIys26mnBsat5XvNDYihLhhJ_O12Cq47_QY-hnoD8gfkA4_Qu50lEjJ3eSSW7CtpdAH-sSC8iKARBud2_v9Pn84uW8AoROuBFgRvvwRIajsDzW99aEjD6fUZO_bXr7_fxlloJvRdIIhbY5em_UVAEBF0YRtR5zVtXgAYQFhUKOGohmU_Ru0RFDC5DiK7ENyLdEFIInDyLIz_74REGBjsQfYftbRuaIuH_n"/>
+<div class="p-4">
+<h3 class="text-lg font-bold text-secondary dark:text-white">Şehir Futbol Parkı</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Merkez, İstanbul</p>
+<div class="flex items-center mt-2">
+<div class="flex items-center text-accent">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base text-gray-300 dark:text-gray-600">star_half</span>
+</div>
+<span class="ml-2 text-sm text-gray-500 dark:text-gray-400">4.5 (123 yorum)</span>
+</div>
+<div class="flex justify-between items-center mt-3">
+<p class="text-lg font-bold text-primary">₺250/saat</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">2.5 km uzaklıkta</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-primary dark:hover:border-primary transition-colors duration-300">
+<img alt="Güneşli bir günde Yeşil Vadi Spor Kompleksi" class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQHt70HBZYNAP0pNEHvbnKkksGTyGNMUR4o5vOPuoW1RMIesUgDTNmNWeCHjrukDoPx_CAnYKUAd-7ezZcifG_VhtYjb0kK88IIUGc1p4sDOPA-pziq_uLvWZ8GnKwKeKsyZdMyvhhceMz75095hcwpIuZTyTVPp-0o3xJE9faM1R-VrQ-4COlI6L1HghYuj3_rPoQL0PyN0XJ8TB7PvLUge_OgCC3oxcNzjCT6It8Zl1lBGbWfjjzJ-Rb9Me0K1dLY8gHsaKM-8j_"/>
+<div class="p-4">
+<h3 class="text-lg font-bold text-secondary dark:text-white">Yeşil Vadi Spor Kompleksi</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Beşiktaş, İstanbul</p>
+<div class="flex items-center mt-2">
+<div class="flex items-center text-accent">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+</div>
+<span class="ml-2 text-sm text-gray-500 dark:text-gray-400">5.0 (98 yorum)</span>
+</div>
+<div class="flex justify-between items-center mt-3">
+<p class="text-lg font-bold text-primary">₺350/saat</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">5.1 km uzaklıkta</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-primary dark:hover:border-primary transition-colors duration-300">
+<img alt="Gün batımında Atakent Halı Saha" class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd3XdY-825v0qxnHx8LGEfkumUu-XtEHaZsQygZRJOVK7P5D6p8nIvwqAiQJ-t7QKUqtAeW2Mp1GbshTPmyGstxXQR69V6GlSQQIkW7cUUN-jvUNwtjxyYSxyXpS7rPekNEBj7p9U4S1zvYBsId4OBUZK7ytyxGkN40gP5y31Hb090kyyK5ue-QXMR0MdwfVycBtWWq9eFRcbC7lxh6euKaDZfVmkujdUbQDUc6HKyXIBRiELuQfHpZG5iSFIeUnnaPjxb8aPLf8MP"/>
+<div class="p-4">
+<h3 class="text-lg font-bold text-secondary dark:text-white">Atakent Halı Saha</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Kadıköy, İstanbul</p>
+<div class="flex items-center mt-2">
+<div class="flex items-center text-accent">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base text-gray-300 dark:text-gray-600">star</span>
+</div>
+<span class="ml-2 text-sm text-gray-500 dark:text-gray-400">4.2 (76 yorum)</span>
+</div>
+<div class="flex justify-between items-center mt-3">
+<p class="text-lg font-bold text-primary">₺200/saat</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">8.3 km uzaklıkta</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 bg-gray-300">
+<img alt="İstanbul'daki futbol sahalarını gösteren bir harita." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_fW0W5qY23-0adoYdyk9RnBmRuRrKfOhYXgoiT-pMsMc394qucEKVqDbFQ6ZSOyqy0hLWI4jfFg0JqsL6iKRKcy6og68ib2rAaZlKwOUx1b6RB8tojuA3yrVyFubFs6UDZk_L7ZRrdOzLCWSXajaZkocZGLzrTn5sIVuitp96KaMNBJ9lyI9o7rYLeSyeXSAseMz2qF68fzjdmti3dcz3qbqwU0GTzpNtL8Zinu6eymJPUFCy2dx2xogJEGu2QFzupJAVJVqJJaUS"/>
+</div>
+</div>
+        <!-- Ortak navbar -->
+        <div id="navbar-container"></div>
+        <script>
+            fetch('../navbar.html')
+                .then(res => res.text())
+                .then(html => { document.getElementById('navbar-container').innerHTML = html; });
+        </script>
+</main>
+</div>
+</div>
+</body></html>
