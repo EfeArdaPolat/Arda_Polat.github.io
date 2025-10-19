@@ -130,6 +130,57 @@
             });
         }
 
+   <script>
+    // Password toggle
+    (function(){
+        const pwToggle = document.getElementById('pw-toggle');
+        const pwInput = document.getElementById('login-password');
+        if (pwToggle && pwInput) {
+            pwToggle.addEventListener('click', function(){
+                if (pwInput.type === 'password') {
+                    pwInput.type = 'text';
+                    pwToggle.querySelector('.material-symbols-outlined').textContent = 'visibility_off';
+                } else {
+                    pwInput.type = 'password';
+                    pwToggle.querySelector('.material-symbols-outlined').textContent = 'visibility';
+                }
+            });
+        }
+
+<script>
+    // Password toggle
+    (function(){
+        const pwToggle = document.getElementById('pw-toggle');
+        const pwInput = document.getElementById('login-password');
+        if (pwToggle && pwInput) {
+            pwToggle.addEventListener('click', function(){
+                if (pwInput.type === 'password') {
+                    pwInput.type = 'text';
+                    pwToggle.querySelector('.material-symbols-outlined').textContent = 'visibility_off';
+                } else {
+                    pwInput.type = 'password';
+                    pwToggle.querySelector('.material-symbols-outlined').textContent = 'visibility';
+                }
+            });
+        }
+<script>
+ <script>
+    // Password toggle
+    (function(){
+        const pwToggle = document.getElementById('pw-toggle');
+        const pwInput = document.getElementById('login-password');
+        if (pwToggle && pwInput) {
+            pwToggle.addEventListener('click', function(){
+                if (pwInput.type === 'password') {
+                    pwInput.type = 'text';
+                    pwToggle.querySelector('.material-symbols-outlined').textContent = 'visibility_off';
+                } else {
+                    pwInput.type = 'password';
+                    pwToggle.querySelector('.material-symbols-outlined').textContent = 'visibility';
+                }
+            });
+        }
+
         // Login button demo
         const loginBtn = document.getElementById('login-btn');
         if (loginBtn) {
@@ -142,10 +193,13 @@
                     alert('Lütfen e-posta ve şifrenizi girin.');
                     return;
                 }
-                alert('Giriş başarılı.');
+
+                // Başarılı giriş sonrası yönlendirme
+                window.location.href = "anasayfa.html";
             });
         }
     })();
 </script>
+
 
 </body></html>
