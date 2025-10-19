@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hesap Oluştur - FieldBookr</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#17cf17",
+            "background-light": "#f6f8f6",
+            "background-dark": "#112111",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Bulanıklaştırılmış bir futbol sahası arka plan resmi." class="h-full w-full object-cover opacity-10 dark:opacity-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDONoRbvrCQavn2gATLJj1bNNypnBGheVqirOUwIig3zFsg9Qp1T57lkxY93u3OMEXwCIrqx2l0WwRP8bMm_qyHKGujuz-tbvwislAKUTzsRKjo9cdEUKkPNatCoQ7PHpHPixf7fHJN5cMYZ0bObiLa2nv57pV9b0vQaK_hRLboFnxkSINp9nN2Dkqt5H8k8ggaT5PB1khvoMmdUPzIljpk0fPaJQx8tOY6OmmZJ1eZUZ1j_PHYOz2NFI4nzShlHyQPSU5IjhEJcz9Y"/>
+</div>
+<div class="relative z-10 mx-auto w-full max-w-md p-6 sm:p-8">
+<div class="text-center mb-8">
+<h1 class="text-4xl font-bold text-primary">FieldBookr</h1>
+<p class="text-lg text-gray-600 dark:text-gray-300">Takıma Katıl</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark/80 backdrop-blur-sm rounded-xl p-8 shadow-2xl">
+<div class="mb-6">
+<p class="text-2xl font-bold text-[#0e1b0e] dark:text-white">Hesabınızı Oluşturun</p>
+<p class="text-base text-gray-500 dark:text-gray-400">Başlayalım.</p>
+</div>
+<form class="space-y-6" id="register-form">
+<div>
+<label class="flex flex-col">
+<p class="text-[#0e1b0e] dark:text-gray-200 text-sm font-medium pb-2">Tam Adınız</p>
+<input class="form-input flex w-full resize-none overflow-hidden rounded-lg text-[#0e1b0e] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#d0e7d0] dark:border-gray-700 bg-background-light dark:bg-gray-800 h-12 placeholder:text-gray-400 dark:placeholder-gray-500 p-3 text-base font-normal leading-normal" placeholder="Tam adınızı girin" type="text"/>
+</label>
+</div>
+<div>
+<label class="flex flex-col">
+<p class="text-[#0e1b0e] dark:text-gray-200 text-sm font-medium pb-2">E-posta Adresi</p>
+<input class="form-input flex w-full resize-none overflow-hidden rounded-lg text-[#0e1b0e] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#d0e7d0] dark:border-gray-700 bg-background-light dark:bg-gray-800 h-12 placeholder:text-gray-400 dark:placeholder-gray-500 p-3 text-base font-normal leading-normal" placeholder="E-posta adresinizi girin" type="email"/>
+</label>
+</div>
+<div>
+<label class="flex flex-col">
+<p class="text-[#0e1b0e] dark:text-gray-200 text-sm font-medium pb-2">Telefon Numarası</p>
+<input class="form-input flex w-full resize-none overflow-hidden rounded-lg text-[#0e1b0e] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#d0e7d0] dark:border-gray-700 bg-background-light dark:bg-gray-800 h-12 placeholder:text-gray-400 dark:placeholder-gray-500 p-3 text-base font-normal leading-normal" placeholder="Telefon numaranızı girin" type="tel"/>
+</label>
+</div>
+<div>
+<label class="flex flex-col">
+<p class="text-[#0e1b0e] dark:text-gray-200 text-sm font-medium pb-2">Şifre</p>
+<div class="relative flex w-full items-center">
+<input class="form-input flex w-full resize-none overflow-hidden rounded-lg text-[#0e1b0e] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#d0e7d0] dark:border-gray-700 bg-background-light dark:bg-gray-800 h-12 placeholder:text-gray-400 dark:placeholder-gray-500 p-3 pr-10 text-base font-normal leading-normal" placeholder="Şifrenizi girin" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-primary password-toggle-btn" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</label>
+</div>
+<div class="pt-4">
+<button class="w-full h-12 rounded-lg bg-primary text-white text-base font-bold transition-all hover:bg-primary/90 active:scale-95" type="submit">Hesap Oluştur</button>
+</div>
+</form>
+</p>
+<p>
+  Zaten bir hesabınız var mı?
+  <a href="login.html">Giriş yap</a>
+</p>
+</div>
+</div>
+<footer class="mt-8 text-center text-sm text-gray-400 dark:text-gray-500">
+<p>
+<a class="hover:underline" href="#">Hizmet Şartları</a>
+<span class="mx-2">•</span>
+<a class="hover:underline" href="#">Gizlilik Politikası</a>
+</p>
+</footer>
+</div>
+</div>
+<script>
+// Password visibility toggle
+const pwBtn = document.querySelector('.password-toggle-btn');
+if (pwBtn) {
+  pwBtn.addEventListener('click', function() {
+    const input = pwBtn.parentElement.querySelector('input');
+    if (input.type === 'password') {
+      input.type = 'text';
+      pwBtn.querySelector('span').textContent = 'visibility_off';
+    } else {
+      input.type = 'password';
+      pwBtn.querySelector('span').textContent = 'visibility';
+    }
+  });
+}
+// Registration form submit demo
+const regForm = document.getElementById('register-form');
+if (regForm) {
+  regForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Kayıt başarılı!');
+  });
+}
+</script>
+</body>
+</html>
